@@ -9,7 +9,9 @@ This environment uses [VS Code Remote Development](https://code.visualstudio.com
 
 [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) can use VS Code and Docker technology to create a Docker container from VS Code and enable work in the Docker container with VS Code.  
 If you have a base Docker image, you can complete all work with a Docker container without building an environment locally.  
-Since the base Docker Image has already been uploaded to [Docker Hub](https://hub.docker.com/) in this repository, it can be used immediately.
+The base Docker image is already uploaded to the [Docker Hub] (https://hub.docker.com/) repository and is ready to use.
+
+https://hub.docker.com/r/ymiyazakixyz/kubernetes-azure
 
 ### Set devcontainer.json
 
