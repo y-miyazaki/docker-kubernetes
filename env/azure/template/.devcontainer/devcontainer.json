@@ -1,5 +1,5 @@
 {
-  "image": "registry.hub.docker.com/ymiyazakixyz/terraform-azure:latest",
+  "image": "registry.hub.docker.com/ymiyazakixyz/kubernetes-azure:latest",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
