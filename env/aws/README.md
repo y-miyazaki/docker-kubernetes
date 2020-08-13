@@ -3,7 +3,7 @@
 ## Overview
 
 This repository is for building an environment targeting AWS EKS.  
-This environment uses [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) and install kubectl/helm/stern/skaffold/Google Cloud SDK CLI
+This environment uses [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) and install kubectl/helm/stern/skaffold/AWS CLI
 
 ## Description
 
@@ -143,38 +143,34 @@ AWS_DEFAULT_REGION=ap-northeast-1
 AWS_REGION=ap-northeast-1
 ```
 
+### set kubeconfig
+After you create your Amazon EKS cluster, you must then configure your kubeconfig file with the AWS Command Line Interface (AWS CLI). This configuration allows you to connect to your cluster using the kubectl command line.  
+https://aws.amazon.com/jp/premiumsupport/knowledge-center/eks-cluster-connection/
+
+```
+# aws eks --region {your cluster region} update-kubeconfig --name {cluster name}
+```
+
+```
+bash-5.0# aws eks --region ap-northeast-1 update-kubeconfig --name test
+Added new context arn:aws:eks:ap-northeast-1:xxxxxxxxxxxxxx:cluster/test to /root/.kube/config
+bash-5.0# kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   172.20.0.1   <none>        443/TCP   5h42m
+```
+
 ### aws version
 
 ```
-bash-5.0# az --version
-aws-cli                          2.7.0
-
-command-modules-nspkg              2.0.3
-core                               2.7.0
-nspkg                              3.0.4
-telemetry                          1.0.4
-
-Python location '/usr/bin/python3'
-Extensions directory '/root/.aws/cliextensions'
-
-Python (Linux) 3.8.3 (default, May 15 2020, 01:53:50) 
-[GCC 9.3.0]
-
-Legal docs and information: aka.ms/awsCliLegal
-
-
-Your CLI is up-to-date.
-
-Please let us know how we are doing: https://aka.ms/clihats
-and let us know if you're interested in trying out our newest features: https://aka.ms/CLIUXstudy
+bash-5.0# aws --version
+aws-cli/2.0.22 Python/3.7.3 Linux/4.19.76-linuxkit botocore/2.0.0dev26
 ```
 
 ### kubectl version
 
 ```
 bash-5.0# kubectl version
-Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.3", GitCommit:"2e7996e3e2712684bc73f0dec0200d64eec7fe40", GitTreeState:"clean", BuildDate:"2020-05-20T12:52:00Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"linux/amd64"}
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+Client Version: version.Info{Major:"1", Minor:"16+", GitVersion:"v1.16.8-eks-e16311", GitCommit:"e163110a04dcb2f39c3325af96d019b4925419eb", GitTreeState:"clean", BuildDate:"2020-03-27T22:40:13Z", GoVersion:"go1.13.8", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
 ### helm version
@@ -195,7 +191,7 @@ stern version 1.11.0
 
 ```
 bash-5.0# skaffold version
-v1.10.1
+v1.11.0
 ```
 
 ## Required

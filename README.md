@@ -10,7 +10,7 @@ The purpose is to create the environment of various providers for Kubernetes in 
 Below we share links to README.md for each environment.
 Please check the content of the link because the setting contents differ for each Cloud.
 
-- [AWS](env/aws/README.md)(WIP)  
+- [AWS](env/aws/README.md)  
 A document that describes how to configure the environment for AWS
 - [GCP](env/gcp/README.md)(WIP)  
 A document that describes how to configure the environment for GCP
