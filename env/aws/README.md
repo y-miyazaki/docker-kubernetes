@@ -3,7 +3,7 @@
 ## Overview
 
 This repository is for building an environment targeting AWS EKS.  
-This environment uses [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) and install kubectl/helm/stern/skaffold/AWS CLI
+This environment uses [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) and install eksctl/kubectl/helm/stern/skaffold/AWS CLI
 
 ## Description
 
@@ -164,6 +164,13 @@ kubernetes   ClusterIP   172.20.0.1   <none>        443/TCP   5h42m
 ```
 bash-5.0# aws --version
 aws-cli/2.0.22 Python/3.7.3 Linux/4.19.76-linuxkit botocore/2.0.0dev26
+```
+
+### eksctl version
+
+```
+bash-5.0# eksctl version
+0.25.0
 ```
 
 ### kubectl version
