@@ -24,7 +24,7 @@ WORKDIR  ${WORKDIR}
 # Install dependent packages
 #--------------------------------------------------------------
 RUN apk update && \
-    apk add --no-cache make bash tar curl zip openssl jq sudo && \
+    apk add --no-cache git make bash tar curl zip openssl jq sudo && \
     # fix sudo: setrlimit(RLIMIT_CORE): Operation not permitted
     echo "Set disable_coredump false" >> /etc/sudo.conf && \
     # setting commands
